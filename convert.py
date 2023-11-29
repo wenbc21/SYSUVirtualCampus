@@ -1,7 +1,5 @@
-import os
 import py360convert as sbwbc
 import cv2
-import glob
 import argparse
 import os
 
