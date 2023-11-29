@@ -2,10 +2,10 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8" />
-    <title>Html App</title>
+    <title>SYSU Virtual Campus</title>
     <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
     />
 
     <!-- 引入 threejs -->
@@ -46,7 +46,7 @@
     // 全景空间配置
     const spacesConfig = [
         {
-            id: 'spaceA', // 空间 id，用于切换空间，必须唯一
+            id: '01', // 空间 id，用于切换空间，必须唯一
             tips: [
                 // 提示，可选
                 {
@@ -63,8 +63,8 @@
                     // 自定义提示图标贴图，可选
                     textureUrl:
                         'https://m.360buyimg.com/babel/jfs/t1/125314/12/31594/6260/6339b149E14068522/5c0d35a3e149936a.png',
-                    targetSpaceId: 'spaceB', // 提示点击后跳转的空间 id，可选
-                    position: {x: -10, y: -4, z: 40},
+                    targetSpaceId: '02', // 提示点击后跳转的空间 id，可选
+                    position: {x: -2, y: -2, z: -40},
                     content: {
                         title: '去客厅',
                         text: '一起去尊贵的客厅吧'
@@ -73,47 +73,113 @@
             ],
             cubeSpaceTextureUrls: {
                 // 立方体贴图，分别为：背侧、下侧、前侧、左侧、右侧、上侧，必须
-                // back: 'https://m.360buyimg.com/babel/jfs/t1/40814/31/19646/41953/63398297E0707fe35/4e831e60cf579899.jpg',
-                // down: 'https://m.360buyimg.com/babel/jfs/t1/43941/23/19369/84038/633982d7E838acd9a/9e7a89cc910d3409.jpg',
-                // front: 'https://m.360buyimg.com/babel/jfs/t1/150573/35/27827/113528/633982faE8556c0c0/b455284fd91885c6.jpg',
-                // left: 'https://m.360buyimg.com/babel/jfs/t1/189204/25/29491/61430/63398310E3c180e43/26d9b459cf714f9f.jpg',
-                // right: 'https://m.360buyimg.com/babel/jfs/t1/184948/34/28448/131232/63398323E61ff80fb/89ab84eda0421260.jpg',
-                // up: 'https://m.360buyimg.com/babel/jfs/t1/86258/24/33602/70616/63398334Ea2dcf448/e2f5c275792fb3d6.jpg'
-                back: './BackGround/1/back.png',
-                down: './BackGround/1/down.png',
-                front: './BackGround/1/front.png',
-                left: './BackGround/1/left.png',
-                right: './BackGround/1/right.png',
-                up: './BackGround/1/up.png'
+                back: './BackGround/01/back.png',
+                down: './BackGround/01/down.png',
+                front: './BackGround/01/front.png',
+                left: './BackGround/01/left.png',
+                right: './BackGround/01/right.png',
+                up: './BackGround/01/up.png'
             }
         },
         {
-            id: 'spaceB',
+            id: '02',
             tips: [
                 {
-                    id: '3',
-                    position: {x: -2, y: -25, z: 40},
+                    id: '1',
+                    textureUrl:
+                        'https://m.360buyimg.com/babel/jfs/t1/125314/12/31594/6260/6339b149E14068522/5c0d35a3e149936a.png',
+                    targetSpaceId: '01',
+                    position: {
+                        x: 1,
+                        y: 0,
+                        z: 40
+                    },
                     content: {
-                        title: '香奈儿垃圾桶',
-                        text: '里面装着主人不用的奢侈品'
+                        title: '去门口',
+                        text: '一起去门口吧'
+                    }
+                },
+                {
+                    id: '2',
+                    textureUrl:
+                        'https://m.360buyimg.com/babel/jfs/t1/125314/12/31594/6260/6339b149E14068522/5c0d35a3e149936a.png',
+                    targetSpaceId: '03',
+                    position: {
+                        x: -1,
+                        y: 0,
+                        z: -40
+                    },
+                    content: {
+                        title: '去门口',
+                        text: '一起去门口吧'
+                    }
+                },
+                {
+                    id: '3',
+                    textureUrl:
+                        'https://m.360buyimg.com/babel/jfs/t1/125314/12/31594/6260/6339b149E14068522/5c0d35a3e149936a.png',
+                    targetSpaceId: '06',
+                    position: {
+                        x: -40,
+                        y: 0,
+                        z: 10
+                    },
+                    content: {
+                        title: '去门口',
+                        text: '一起去门口吧'
                     }
                 },
                 {
                     id: '4',
-                    position: {x: -20, y: 0, z: 40},
+                    textureUrl:
+                        'https://m.360buyimg.com/babel/jfs/t1/125314/12/31594/6260/6339b149E14068522/5c0d35a3e149936a.png',
+                    targetSpaceId: '22',
+                    position: {
+                        x: 40,
+                        y: -5,
+                        z: 0
+                    },
                     content: {
-                        title: '宇宙牌冰箱',
-                        text: '装着超级多零食'
+                        title: '去门口',
+                        text: '一起去门口吧'
+                    }
+                }
+            ],
+            cubeSpaceTextureUrls: {
+                back: './BackGround/02/back.png',
+                down: './BackGround/02/down.png',
+                front: './BackGround/02/front.png',
+                left: './BackGround/02/left.png',
+                right: './BackGround/02/right.png',
+                up: './BackGround/02/up.png'
+            }
+        },
+        {
+            id: '03',
+            tips: [
+                {
+                    id: '1',
+                    textureUrl:
+                        'https://m.360buyimg.com/babel/jfs/t1/125314/12/31594/6260/6339b149E14068522/5c0d35a3e149936a.png',
+                    targetSpaceId: '02',
+                    position: {
+                        x: 5,
+                        y: 1,
+                        z: 40
+                    },
+                    content: {
+                        title: '去门口',
+                        text: '一起去门口吧'
                     }
                 },
                 {
-                    id: '5',
+                    id: '2',
                     textureUrl:
                         'https://m.360buyimg.com/babel/jfs/t1/125314/12/31594/6260/6339b149E14068522/5c0d35a3e149936a.png',
-                    targetSpaceId: 'spaceA',
+                    targetSpaceId: '04',
                     position: {
-                        x: -8,
-                        y: 0,
+                        x: -4,
+                        y: -4,
                         z: -40
                     },
                     content: {
@@ -123,20 +189,301 @@
                 }
             ],
             cubeSpaceTextureUrls: {
-                // back: 'https://m.360buyimg.com/babel/jfs/t1/48117/28/21445/120448/63398366Ede81497b/a46e362df5f7d0ed.jpg',
-                // down: 'https://m.360buyimg.com/babel/jfs/t1/101209/24/26762/106253/63398376Eedb0db22/4f335c4ecd72ad74.jpg',
-                // front: 'https://m.360buyimg.com/babel/jfs/t1/154056/6/26449/110652/63398388E8ecda044/22e1646534839a95.jpg',
-                // left: 'https://m.360buyimg.com/babel/jfs/t1/198990/28/28201/74687/6339839aE28806a5e/43b311d3379397df.jpg',
-                // right: 'https://m.360buyimg.com/babel/jfs/t1/209711/14/25233/92186/633983b0E8f4df687/750ba84061ea64a6.jpg',
-                // up: 'https://m.360buyimg.com/babel/jfs/t1/186545/35/29054/29678/633983c2E72ef4848/92043b945a03fc29.jpg'
-                back: './BackGround/2/back.jpg',
-                down: './BackGround/2/down.jpg',
-                front: './BackGround/2/front.jpg',
-                left: './BackGround/2/left.jpg',
-                right: './BackGround/2/right.jpg',
-                up: './BackGround/2/up.jpg'
+                back: './BackGround/03/back.png',
+                down: './BackGround/03/down.png',
+                front: './BackGround/03/front.png',
+                left: './BackGround/03/left.png',
+                right: './BackGround/03/right.png',
+                up: './BackGround/03/up.png'
             }
-        }
+        },
+        // 改到这里
+        {
+            id: '04',
+            cubeSpaceTextureUrls: {
+                back: './BackGround/04/back.png',
+                down: './BackGround/04/down.png',
+                front: './BackGround/04/front.png',
+                left: './BackGround/04/left.png',
+                right: './BackGround/04/right.png',
+                up: './BackGround/04/up.png'
+            }
+        },
+        {
+            id: '05',
+            cubeSpaceTextureUrls: {
+                back: './BackGround/05/back.png',
+                down: './BackGround/05/down.png',
+                front: './BackGround/05/front.png',
+                left: './BackGround/05/left.png',
+                right: './BackGround/05/right.png',
+                up: './BackGround/05/up.png'
+            }
+        },
+        {
+            id: '06',
+            cubeSpaceTextureUrls: {
+                back: './BackGround/06/back.png',
+                down: './BackGround/06/down.png',
+                front: './BackGround/06/front.png',
+                left: './BackGround/06/left.png',
+                right: './BackGround/06/right.png',
+                up: './BackGround/06/up.png'
+            }
+        },
+        {
+            id: '07',
+            cubeSpaceTextureUrls: {
+                back: './BackGround/07/back.png',
+                down: './BackGround/07/down.png',
+                front: './BackGround/07/front.png',
+                left: './BackGround/07/left.png',
+                right: './BackGround/07/right.png',
+                up: './BackGround/07/up.png'
+            }
+        },
+        {
+            id: '08',
+            cubeSpaceTextureUrls: {
+                back: './BackGround/08/back.png',
+                down: './BackGround/08/down.png',
+                front: './BackGround/08/front.png',
+                left: './BackGround/08/left.png',
+                right: './BackGround/08/right.png',
+                up: './BackGround/08/up.png'
+            }
+        },
+        {
+            id: '09',
+            cubeSpaceTextureUrls: {
+                back: './BackGround/09/back.png',
+                down: './BackGround/09/down.png',
+                front: './BackGround/09/front.png',
+                left: './BackGround/09/left.png',
+                right: './BackGround/09/right.png',
+                up: './BackGround/09/up.png'
+            }
+        },
+        {
+            id: '10',
+            cubeSpaceTextureUrls: {
+                back: './BackGround/10/back.png',
+                down: './BackGround/10/down.png',
+                front: './BackGround/10/front.png',
+                left: './BackGround/10/left.png',
+                right: './BackGround/10/right.png',
+                up: './BackGround/10/up.png'
+            }
+        },
+        {
+            id: '11',
+            cubeSpaceTextureUrls: {
+                back: './BackGround/11/back.png',
+                down: './BackGround/11/down.png',
+                front: './BackGround/11/front.png',
+                left: './BackGround/11/left.png',
+                right: './BackGround/11/right.png',
+                up: './BackGround/11/up.png'
+            }
+        },
+        {
+            id: '12',
+            cubeSpaceTextureUrls: {
+                back: './BackGround/12/back.png',
+                down: './BackGround/12/down.png',
+                front: './BackGround/12/front.png',
+                left: './BackGround/12/left.png',
+                right: './BackGround/12/right.png',
+                up: './BackGround/12/up.png'
+            }
+        },
+        {
+            id: '13',
+            cubeSpaceTextureUrls: {
+                back: './BackGround/13/back.png',
+                down: './BackGround/13/down.png',
+                front: './BackGround/13/front.png',
+                left: './BackGround/13/left.png',
+                right: './BackGround/13/right.png',
+                up: './BackGround/13/up.png'
+            }
+        },
+        {
+            id: '14',
+            cubeSpaceTextureUrls: {
+                back: './BackGround/14/back.png',
+                down: './BackGround/14/down.png',
+                front: './BackGround/14/front.png',
+                left: './BackGround/14/left.png',
+                right: './BackGround/14/right.png',
+                up: './BackGround/14/up.png'
+            }
+        },
+        {
+            id: '15',
+            cubeSpaceTextureUrls: {
+                back: './BackGround/15/back.png',
+                down: './BackGround/15/down.png',
+                front: './BackGround/15/front.png',
+                left: './BackGround/15/left.png',
+                right: './BackGround/15/right.png',
+                up: './BackGround/15/up.png'
+            }
+        },
+        {
+            id: '16',
+            cubeSpaceTextureUrls: {
+                back: './BackGround/16/back.png',
+                down: './BackGround/16/down.png',
+                front: './BackGround/16/front.png',
+                left: './BackGround/16/left.png',
+                right: './BackGround/16/right.png',
+                up: './BackGround/16/up.png'
+            }
+        },
+        {
+            id: '17',
+            cubeSpaceTextureUrls: {
+                back: './BackGround/17/back.png',
+                down: './BackGround/17/down.png',
+                front: './BackGround/17/front.png',
+                left: './BackGround/17/left.png',
+                right: './BackGround/17/right.png',
+                up: './BackGround/17/up.png'
+            }
+        },
+        {
+            id: '18',
+            cubeSpaceTextureUrls: {
+                back: './BackGround/18/back.png',
+                down: './BackGround/18/down.png',
+                front: './BackGround/18/front.png',
+                left: './BackGround/18/left.png',
+                right: './BackGround/18/right.png',
+                up: './BackGround/18/up.png'
+            }
+        },
+        {
+            id: '19',
+            cubeSpaceTextureUrls: {
+                back: './BackGround/19/back.png',
+                down: './BackGround/19/down.png',
+                front: './BackGround/19/front.png',
+                left: './BackGround/19/left.png',
+                right: './BackGround/19/right.png',
+                up: './BackGround/19/up.png'
+            }
+        },
+        {
+            id: '20',
+            cubeSpaceTextureUrls: {
+                back: './BackGround/20/back.png',
+                down: './BackGround/20/down.png',
+                front: './BackGround/20/front.png',
+                left: './BackGround/20/left.png',
+                right: './BackGround/20/right.png',
+                up: './BackGround/20/up.png'
+            }
+        },
+        {
+            id: '21',
+            cubeSpaceTextureUrls: {
+                back: './BackGround/21/back.png',
+                down: './BackGround/21/down.png',
+                front: './BackGround/21/front.png',
+                left: './BackGround/21/left.png',
+                right: './BackGround/21/right.png',
+                up: './BackGround/21/up.png'
+            }
+        },
+        {
+            id: '22',
+            cubeSpaceTextureUrls: {
+                back: './BackGround/22/back.png',
+                down: './BackGround/22/down.png',
+                front: './BackGround/22/front.png',
+                left: './BackGround/22/left.png',
+                right: './BackGround/22/right.png',
+                up: './BackGround/22/up.png'
+            }
+        },
+        {
+            id: '23',
+            cubeSpaceTextureUrls: {
+                back: './BackGround/23/back.png',
+                down: './BackGround/23/down.png',
+                front: './BackGround/23/front.png',
+                left: './BackGround/23/left.png',
+                right: './BackGround/23/right.png',
+                up: './BackGround/23/up.png'
+            }
+        },
+        {
+            id: '24',
+            cubeSpaceTextureUrls: {
+                back: './BackGround/24/back.png',
+                down: './BackGround/24/down.png',
+                front: './BackGround/24/front.png',
+                left: './BackGround/24/left.png',
+                right: './BackGround/24/right.png',
+                up: './BackGround/24/up.png'
+            }
+        },
+        {
+            id: '25',
+            cubeSpaceTextureUrls: {
+                back: './BackGround/25/back.png',
+                down: './BackGround/25/down.png',
+                front: './BackGround/25/front.png',
+                left: './BackGround/25/left.png',
+                right: './BackGround/25/right.png',
+                up: './BackGround/25/up.png'
+            }
+        },
+        {
+            id: '26',
+            cubeSpaceTextureUrls: {
+                back: './BackGround/26/back.png',
+                down: './BackGround/26/down.png',
+                front: './BackGround/26/front.png',
+                left: './BackGround/26/left.png',
+                right: './BackGround/26/right.png',
+                up: './BackGround/26/up.png'
+            }
+        },
+        {
+            id: '27',
+            cubeSpaceTextureUrls: {
+                back: './BackGround/27/back.png',
+                down: './BackGround/27/down.png',
+                front: './BackGround/27/front.png',
+                left: './BackGround/27/left.png',
+                right: './BackGround/27/right.png',
+                up: './BackGround/27/up.png'
+            }
+        },
+        {
+            id: '28',
+            cubeSpaceTextureUrls: {
+                back: './BackGround/28/back.png',
+                down: './BackGround/28/down.png',
+                front: './BackGround/28/front.png',
+                left: './BackGround/28/left.png',
+                right: './BackGround/28/right.png',
+                up: './BackGround/28/up.png'
+            }
+        },
+        {
+            id: '29',
+            cubeSpaceTextureUrls: {
+                back: './BackGround/29/back.png',
+                down: './BackGround/29/down.png',
+                front: './BackGround/29/front.png',
+                left: './BackGround/29/left.png',
+                right: './BackGround/29/right.png',
+                up: './BackGround/29/up.png'
+            }
+        },
     ]
 
     // 初始化全景实例
@@ -208,4 +555,3 @@
 </script>
 </body>
 </html>
-
