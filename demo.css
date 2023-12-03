@@ -57,3 +57,21 @@
   background-size: cover;
   border-radius: 4px;
 }
+
+.demo img{
+  width: 352px;
+  height: 447px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  opacity: 0.4;
+}
+
+.demo img:hover{
+  width: 352px;
+  height: 447px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  opacity: 1.0;
+}
