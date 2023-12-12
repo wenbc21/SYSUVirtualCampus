@@ -36,7 +36,14 @@
     <div class="demo-bottom-bar"></div>
 
     <!-- 左上角显示地图 -->
-    <img id="map" src="./resources/map_origin.jpg">
+    <div class="menu">
+        <span>校园地图</span>
+        <div>
+            <div class="drop">
+                <img id="map" src="./resources/map_origin.jpg">
+            </div>
+        </div>
+    </div>
 </div>
 
 <script>
@@ -1983,11 +1990,6 @@
         vr360.destroy()
     })
 
-    // 监听鼠标滚轮
-    window.addEventListener('mousewheel', () => {
-        onMouseWheel();
-    })
-
     // 监听鼠标点击地图
     map.addEventListener("click", () => {
         vr360.switchSpace('map_overall')
@@ -1996,25 +1998,6 @@
     // 切换全景空间
     function handleSwitchSpace(space) {
         vr360.switchSpace(space.id)
-    }
-
-    // console.log('3d 渲染容器是：', vr360.container)
-    // console.log('3d 相机是：', vr360.camera)
-    // console.log('3d 渲染器是：', vr360.renderer)
-    // console.log('3d 场景是：', vr360.scene)
-    // console.log('3d 控制器是：', vr360.controls)
-
-    // 拉近拉远
-    function onMouseWheel(ev) {
-        var ev = ev || window.event;
-        var down = true;
-        down = ev.wheelDelta ? ev.wheelDelta < 0 : ev.detail > 0;
-        if (down) {
-            console.log('鼠标滚轮向下---------')
-        } else {
-            console.log('鼠标滚轮向上++++++++++')
-        }
-        return false;
     }
 
     bottomBar.append(
