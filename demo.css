@@ -58,20 +58,39 @@
   border-radius: 4px;
 }
 
-.demo img{
+.menu{
   width: 235px;
-  height: 298px;
+  height: 35px;
+  background: rgb(160, 160, 160);
+  line-height: 35px;
+  text-align: center;
   position: absolute;
-  top: 20px;
-  left: 20px;
-  opacity: 0.4;
+  font-size: large;
+  top: 10px;
+  left: 10px;
+  overflow: hidden;
 }
 
-.demo img:hover{
+.menu:hover{
+  overflow: visible;
+  z-index: 999;
+  cursor: pointer;
+}
+
+.menu:hover .drop{
+  opacity: 1;
+  transition: opacity 0.8s;
+  cursor: pointer;
+}
+
+.drop{
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+  opacity: 0;
+}
+
+.drop img{
   width: 235px;
   height: 298px;
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  opacity: 1.0;
 }
