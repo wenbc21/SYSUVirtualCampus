@@ -33,7 +33,7 @@
     <div class="demo-container"></div>
 
     <!-- 底部切换场景 -->
-    <div class="demo-bottom-bar"></div>
+    <!-- <div class="demo-bottom-bar"></div> -->
 
     <!-- 左上角显示地图 -->
     <div class="menu">
@@ -52,7 +52,7 @@
     const tip = document.querySelector('.demo-tip') // 提示容器
     const tipTitle = document.querySelector('.demo-tip-title') // 提示标题 el
     const tipContent = document.querySelector('.demo-tip-content') // 提示内容 el
-    const bottomBar = document.querySelector('.demo-bottom-bar') // 底部切换场景容器
+    // const bottomBar = document.querySelector('.demo-bottom-bar') // 底部切换场景容器
     const map = document.getElementById('map')
 
     // 全景空间配置
@@ -2786,19 +2786,19 @@
         vr360.switchSpace(space.id)
     }
 
-    bottomBar.append(
-        ...spacesConfig.map(space => {
-            const card = document.createElement('div')
-            card.className = 'demo-bottom-card'
-            Object.assign(card.style, {
-                backgroundImage: `url(${space.cubeSpaceTextureUrls.left})`
-            })
-            card.addEventListener('click', () => {
-                handleSwitchSpace(space)
-            })
-            return card
-        })
-    )
+    // bottomBar.append(
+    //     ...spacesConfig.map(space => {
+    //         const card = document.createElement('div')
+    //         card.className = 'demo-bottom-card'
+    //         Object.assign(card.style, {
+    //             backgroundImage: `url(${space.cubeSpaceTextureUrls.left})`
+    //         })
+    //         card.addEventListener('click', () => {
+    //             handleSwitchSpace(space)
+    //         })
+    //         return card
+    //     })
+    // )
 </script>
 </body>
 </html>
